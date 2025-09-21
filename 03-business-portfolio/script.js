@@ -211,8 +211,16 @@ function initContactForm() {
         });
         
         if (isValid) {
-            // Simulate form submission
-            showNotification('Tak for din besked! Jeg vender tilbage snart.', 'success');
+            // Open email client with pre-filled content
+            const emailSubject = encodeURIComponent(subject);
+            const emailBody = encodeURIComponent(`Hej Mike,\n\n${message}\n\nMed venlig hilsen,\n${name}\n${email}`);
+            const mailtoLink = `mailto:Andersenmike91@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            showNotification('Email client åbnet! Udfyld din besked og send.', 'success');
             contactForm.reset();
         } else {
             showNotification('Venligst ret fejlene i formularen.', 'error');
