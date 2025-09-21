@@ -1,0 +1,226 @@
+---
+layout: default
+title: "Din Navn - Developer & Blogger"
+description: "Personal blog and portfolio of a passionate full-stack developer sharing insights about web development, technology, and career growth."
+---
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Hej, jeg er <span class="highlight">Din Navn</span>
+        </h1>
+        <p class="hero-subtitle">
+          Full-Stack Developer & Tech Blogger
+        </p>
+        <p class="hero-description">
+          Jeg deler mine erfaringer, læringer og tanker om web udvikling, 
+          teknologi og karriereudvikling. Følg med på min rejse gennem 
+          tech verdenen!
+        </p>
+        <div class="hero-actions">
+          <a href="/blog/" class="btn btn-primary">Læs Min Blog</a>
+          <a href="/projects/" class="btn btn-outline">Se Mine Projekter</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">{{ site.posts.size }}</span>
+            <span class="stat-label">Blog Posts</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">{{ site.projects.size }}</span>
+            <span class="stat-label">Projekter</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Års Erfaring</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="profile-card">
+          <div class="profile-image">
+            <img src="/assets/images/profile.jpg" alt="Din Navn" loading="lazy">
+          </div>
+          <div class="profile-info">
+            <h3>Din Navn</h3>
+            <p>Full-Stack Developer</p>
+            <div class="social-links">
+              <a href="https://github.com/{{ site.social.github }}" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/{{ site.social.linkedin }}" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://twitter.com/{{ site.social.twitter }}" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="mailto:{{ site.social.email }}" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="latest-posts">
+  <div class="container">
+    <h2 class="section-title">Seneste Blog Posts</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        <div class="post-image">
+          {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+          {% else %}
+            <div class="post-placeholder">
+              <i class="fas fa-code"></i>
+            </div>
+          {% endif %}
+          <div class="post-category">{{ post.categories.first }}</div>
+        </div>
+        <div class="post-content">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%d. %B %Y" }}
+            </time>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              {{ post.content | reading_time }} min læsning
+            </span>
+          </div>
+          <h3 class="post-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+          <div class="post-tags">
+            {% for tag in post.tags limit:3 %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="/blog/" class="btn btn-outline">Se Alle Posts</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-projects">
+  <div class="container">
+    <h2 class="section-title">Udvalgte Projekter</h2>
+    <div class="projects-grid">
+      {% for project in site.projects limit:3 %}
+      <div class="project-card">
+        <div class="project-image">
+          {% if project.image %}
+            <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+          {% else %}
+            <div class="project-placeholder">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+          {% endif %}
+          <div class="project-overlay">
+            <div class="project-links">
+              {% if project.demo_url %}
+                <a href="{{ project.demo_url }}" class="project-link" target="_blank" rel="noopener">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+              {% endif %}
+              {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-tech">
+            {% for tech in project.technologies limit:4 %}
+              <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section-footer">
+      <a href="/projects/" class="btn btn-outline">Se Alle Projekter</a>
+    </div>
+  </div>
+</section>
+
+<section class="about-preview">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Om Mig</h2>
+        <p>
+          Jeg er en passioneret full-stack developer med over 5 års erfaring i at bygge 
+          skalerbare web applikationer. Jeg elsker at dele mine erfaringer og læringer 
+          gennem blog posts og open source projekter.
+        </p>
+        <p>
+          Min ekspertise spænder over hele tech stacken - fra frontend frameworks som 
+          React og Vue.js til backend teknologier som Node.js og Python, samt cloud 
+          services som AWS og Azure.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projekter</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Blog Posts</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10K+</span>
+            <span class="stat-label">GitHub Stars</span>
+          </div>
+        </div>
+        <a href="/about/" class="btn btn-primary">Læs Mere Om Mig</a>
+      </div>
+      <div class="about-image">
+        <div class="image-container">
+          <img src="/assets/images/about.jpg" alt="Din Navn arbejder" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-content">
+      <div class="newsletter-text">
+        <h2>Hold Dig Opdateret</h2>
+        <p>
+          Få de seneste blog posts og projekter direkte i din indbakke. 
+          Ingen spam, kun værdifuldt indhold.
+        </p>
+      </div>
+      <form class="newsletter-form" action="https://your-email-service.com/subscribe" method="POST">
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Din email adresse" required>
+          <button type="submit" class="btn btn-primary">Tilmeld</button>
+        </div>
+        <p class="newsletter-disclaimer">
+          Vi respekterer dit privatliv. Afmeld dig når som helst.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+

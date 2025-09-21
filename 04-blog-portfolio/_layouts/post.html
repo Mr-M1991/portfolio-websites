@@ -1,0 +1,161 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post-header">
+        <div class="container">
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
+                    {{ page.date | date: "%d. %B %Y" }}
+                </time>
+                <span class="reading-time">
+                    <i class="fas fa-clock"></i>
+                    {{ page.content | reading_time }} min læsning
+                </span>
+                <div class="post-categories">
+                    {% for category in page.categories %}
+                        <span class="category-tag">{{ category }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.subtitle %}
+                <p class="post-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            {% if page.image %}
+                <div class="post-image">
+                    <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
+                </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="post-body">
+                    {{ content }}
+                </div>
+                
+                <aside class="post-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Indhold</h3>
+                        <div class="table-of-contents" id="toc"></div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Tags</h3>
+                        <div class="post-tags">
+                            {% for tag in page.tags %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Del Post</h3>
+                        <div class="social-share">
+                            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" 
+                               target="_blank" rel="noopener" class="share-link twitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" 
+                               target="_blank" rel="noopener" class="share-link linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" 
+                               target="_blank" rel="noopener" class="share-link facebook">
+                                <i class="fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer class="post-footer">
+        <div class="container">
+            <div class="author-card">
+                <div class="author-image">
+                    <img src="/assets/images/profile.jpg" alt="{{ site.author }}" loading="lazy">
+                </div>
+                <div class="author-info">
+                    <h3>{{ site.author }}</h3>
+                    <p>{{ site.description }}</p>
+                    <div class="author-links">
+                        <a href="https://github.com/{{ site.social.github }}">GitHub</a>
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}">LinkedIn</a>
+                        <a href="https://twitter.com/{{ site.social.twitter }}">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-navigation">
+                {% if page.previous %}
+                <a href="{{ page.previous.url | relative_url }}" class="nav-link prev">
+                    <i class="fas fa-arrow-left"></i>
+                    <div class="nav-content">
+                        <span class="nav-label">Forrige Post</span>
+                        <span class="nav-title">{{ page.previous.title }}</span>
+                    </div>
+                </a>
+                {% endif %}
+                
+                {% if page.next %}
+                <a href="{{ page.next.url | relative_url }}" class="nav-link next">
+                    <div class="nav-content">
+                        <span class="nav-label">Næste Post</span>
+                        <span class="nav-title">{{ page.next.title }}</span>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- Related Posts -->
+<section class="related-posts">
+    <div class="container">
+        <h2>Relaterede Posts</h2>
+        <div class="posts-grid">
+            {% assign related_posts = site.posts | where_exp:"post","post.categories contains page.categories.first" | where_exp:"post","post.url != page.url" | limit:3 %}
+            {% for post in related_posts %}
+            <article class="post-card">
+                <div class="post-image">
+                    {% if post.image %}
+                        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+                    {% else %}
+                        <div class="post-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    {% endif %}
+                    <div class="post-category">{{ post.categories.first }}</div>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%d. %B %Y" }}
+                        </time>
+                        <span class="reading-time">
+                            <i class="fas fa-clock"></i>
+                            {{ post.content | reading_time }} min
+                        </span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+

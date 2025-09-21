@@ -1,0 +1,103 @@
+# Site settings
+title: "Din Navn - Developer & Blogger"
+description: "Personal blog and portfolio of a passionate full-stack developer sharing insights about web development, technology, and career growth."
+author: "Din Navn"
+email: "din.email@example.com"
+url: "https://yourusername.github.io"
+baseurl: "/blog-portfolio"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+timezone: Europe/Copenhagen
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Din Navn"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-category
+    tag: archive-tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# SEO
+seo:
+  type: "Person"
+  name: "Din Navn"
+  job_title: "Full-Stack Developer"
+  description: "Passionate full-stack developer sharing insights about web development and technology"
+  links:
+    - "https://github.com/yourusername"
+    - "https://linkedin.com/in/yourusername"
+    - "https://twitter.com/yourusername"
+
+# Social media
+social:
+  github: yourusername
+  linkedin: yourusername
+  twitter: yourusername
+  email: din.email@example.com
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Blog"
+    url: "/blog/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Contact"
+    url: "/contact/"
+
+# Pagination
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - node_modules/
+  - package.json
+  - package-lock.json
+

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Din Navn - Senior Full-Stack Developer</title>
+    <meta name="description" content="Erfaren full-stack developer med ekspertise i React, Node.js, og cloud teknologier. Specialiseret i at bygge skalerbare web applikationer for enterprise kunder.">
+    <meta name="keywords" content="full-stack developer, React, Node.js, JavaScript, TypeScript, AWS, cloud, enterprise, web development">
+    <meta name="author" content="Din Navn">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Din Navn - Senior Full-Stack Developer">
+    <meta property="og:description" content="Erfaren full-stack developer med ekspertise i moderne web teknologier">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Din Navn - Senior Full-Stack Developer">
+    <meta name="twitter:description" content="Erfaren full-stack developer med ekspertise i moderne web teknologier">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Din Navn",
+        "jobTitle": "Senior Full-Stack Developer",
+        "description": "Erfaren full-stack developer med ekspertise i React, Node.js, og cloud teknologier",
+        "url": "https://yourwebsite.com",
+        "sameAs": [
+            "https://github.com/yourusername",
+            "https://linkedin.com/in/yourusername"
+        ],
+        "knowsAbout": ["React", "Node.js", "JavaScript", "TypeScript", "AWS", "Cloud Computing"],
+        "alumniOf": "Din Uddannelse",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Din Nuværende Arbejdsplads"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hovednavigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" class="logo-link" aria-label="Gå til forsiden">
+                    <span class="logo-text">DN</span>
+                    <span class="logo-subtitle">Developer</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#home" class="nav-link" role="menuitem" aria-current="page">Hjem</a>
+                <a href="#about" class="nav-link" role="menuitem">Om Mig</a>
+                <a href="#experience" class="nav-link" role="menuitem">Erfaring</a>
+                <a href="#skills" class="nav-link" role="menuitem">Kompetencer</a>
+                <a href="#projects" class="nav-link" role="menuitem">Projekter</a>
+                <a href="#testimonials" class="nav-link" role="menuitem">Anbefalinger</a>
+                <a href="#contact" class="nav-link" role="menuitem">Kontakt</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Åbn navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="banner">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-code"></i>
+                        <span>Senior Full-Stack Developer</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Hej, jeg er <span class="highlight">Din Navn</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Jeg bygger skalerbare web applikationer og digitale løsninger 
+                        der driver forretningsvækst og forbedrer brugeroplevelser.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Års Erfaring</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projekter</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Kundetilfredshed</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i>
+                            Se Mine Projekter
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Kontakt Mig
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="status-indicator"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Din Navn</h3>
+                            <p>Senior Full-Stack Developer</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>København, Danmark</span>
+                            </div>
+                        </div>
+                        <div class="profile-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Om Mig</h2>
+                    <p class="section-subtitle">
+                        Passioneret udvikler med fokus på kvalitet, performance og brugeroplevelse
+                    </p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="text-block">
+                            <h3>Min Baggrund</h3>
+                            <p>
+                                Jeg er en erfaren full-stack developer med over 5 års erfaring i at bygge 
+                                skalerbare web applikationer. Min ekspertise spænder over hele tech stacken, 
+                                fra frontend frameworks til backend services og cloud infrastruktur.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h3>Min Tilgang</h3>
+                            <p>
+                                Jeg tror på at bygge løsninger der ikke kun møder tekniske krav, men også 
+                                skaber værdi for forretningen. Min tilgang kombinerer teknisk ekspertise med 
+                                forretningsforståelse for at levere resultater der gør en forskel.
+                            </p>
+                        </div>
+                        <div class="certifications">
+                            <h3>Certifikater</h3>
+                            <div class="cert-grid">
+                                <div class="cert-item">
+                                    <i class="fab fa-aws"></i>
+                                    <span>AWS Certified Developer</span>
+                                </div>
+                                <div class="cert-item">
+                                    <i class="fab fa-microsoft"></i>
+                                    <span>Azure Fundamentals</span>
+                                </div>
+                                <div class="cert-item">
+                                    <i class="fab fa-google"></i>
+                                    <span>Google Cloud Associate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="experience-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Senior Developer</h4>
+                                    <p>TechCorp A/S</p>
+                                    <span class="timeline-date">2022 - Nu</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Full-Stack Developer</h4>
+                                    <p>InnovateLab</p>
+                                    <span class="timeline-date">2020 - 2022</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Frontend Developer</h4>
+                                    <p>WebStudio</p>
+                                    <span class="timeline-date">2019 - 2020</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Professionel Erfaring</h2>
+                    <p class="section-subtitle">
+                        Min rejse gennem tech industrien og de projekter jeg har bidraget til
+                    </p>
+                </div>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="company-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="experience-info">
+                                <h3>Senior Full-Stack Developer</h3>
+                                <h4>TechCorp A/S</h4>
+                                <span class="experience-period">2022 - Nu</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <p>
+                                Ledede udvikling af enterprise web applikationer med fokus på skalerbarhed 
+                                og performance. Implementerede microservices arkitektur og CI/CD pipelines.
+                            </p>
+                            <ul class="achievements">
+                                <li>Reducerede load time med 40% gennem performance optimering</li>
+                                <li>Implementerede automated testing der øgede code coverage til 90%</li>
+                                <li>Mentored 3 junior developers og forbedrede team produktivitet</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="company-logo">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="experience-info">
+                                <h3>Full-Stack Developer</h3>
+                                <h4>InnovateLab</h4>
+                                <span class="experience-period">2020 - 2022</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <p>
+                                Udviklede innovative web løsninger for startup miljøet. Arbejdede med 
+                                moderne teknologier og agile udviklingsmetoder.
+                            </p>
+                            <ul class="achievements">
+                                <li>Byggede MVP for fintech app der nåede 10.000+ brugere</li>
+                                <li>Implementerede real-time features med WebSocket og Redis</li>
+                                <li>Forbedrede brugeroplevelse gennem A/B testing og data analyse</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="company-logo">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="experience-info">
+                                <h3>Frontend Developer</h3>
+                                <h4>WebStudio</h4>
+                                <span class="experience-period">2019 - 2020</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <p>
+                                Specialiserede mig i frontend udvikling og brugeroplevelse. Arbejdede 
+                                tæt sammen med design team for at skabe intuitive interfaces.
+                            </p>
+                            <ul class="achievements">
+                                <li>Udviklede responsive designs for 20+ klienter</li>
+                                <li>Implementerede accessibility standards (WCAG 2.1)</li>
+                                <li>Forbedrede SEO performance med 60% bedre rankings</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">SASS</span>
+                                <span class="tech-tag">Webpack</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tekniske Kompetencer</h2>
+                    <p class="section-subtitle">
+                        Mine ekspertområder og teknologier jeg arbejder med
+                    </p>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-level">Ekspert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Vue.js</span>
+                                    <span class="skill-level">Avanceret</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-level">Ekspert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS/SASS</span>
+                                    <span class="skill-level">Ekspert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Backend Development</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-level">Ekspert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">Avanceret</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Express.js</span>
+                                    <span class="skill-level">Ekspert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">GraphQL</span>
+                                    <span class="skill-level">Avanceret</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud & DevOps</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">AWS</span>
+                                    <span class="skill-level">Ekspert</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-level">Avanceret</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Kubernetes</span>
+                                    <span class="skill-level">Avanceret</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CI/CD</span>
+                                    <span class="skill-level">Avanceret</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Udvalgte Projekter</h2>
+                    <p class="section-subtitle">
+                        Nogle af de projekter jeg er stolt af at have bidraget til
+                    </p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card featured">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="#" class="project-link" aria-label="Se live demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Live Demo</span>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Se kode på GitHub">
+                                        <i class="fab fa-github"></i>
+                                        <span>GitHub</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-preview">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="project-badge">Featured</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Enterprise E-commerce Platform</h3>
+                            <p>
+                                Fuldt funktionel e-commerce løsning bygget med React og Node.js. 
+                                Inkluderer payment integration, inventory management og analytics dashboard.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-number">50K+</span>
+                                    <span class="stat-label">Brugere</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">99.9%</span>
+                                    <span class="stat-label">Uptime</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">2.3s</span>
+                                    <span class="stat-label">Load Time</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="#" class="project-link" aria-label="Se live demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Live Demo</span>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Se kode på GitHub">
+                                        <i class="fab fa-github"></i>
+                                        <span>GitHub</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-preview">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Real-time Analytics Dashboard</h3>
+                            <p>
+                                Interaktiv dashboard med real-time data visualisering og 
+                                customisable widgets for business intelligence.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">WebSocket</span>
+                                <span class="tech-tag">Redis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="#" class="project-link" aria-label="Se live demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Live Demo</span>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Se kode på GitHub">
+                                        <i class="fab fa-github"></i>
+                                        <span>GitHub</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-preview">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Cross-platform Mobile App</h3>
+                            <p>
+                                React Native app med offline funktionalitet og push notifications 
+                                for fitness tracking og social features.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Redux</span>
+                                <span class="tech-tag">Expo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Anbefalinger</h2>
+                    <p class="section-subtitle">
+                        Hvad mine kolleger og klienter siger om mit arbejde
+                    </p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>
+                                "Din Navn leverede en exceptionel løsning der overgik alle vores forventninger. 
+                                Hans tekniske ekspertise og evne til at forstå forretningsbehov gjorde ham til 
+                                en værdifuld partner i vores projekt."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CTO, TechCorp A/S</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>
+                                "Arbejdet med Din Navn var en fornøjelse. Han er ikke kun teknisk dygtig, 
+                                men også en fantastisk team player der altid er klar til at hjælpe og dele 
+                                sin viden med andre."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Lead Developer, InnovateLab</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>
+                                "Din Navn's evne til at oversætte komplekse tekniske koncepter til 
+                                forståelige løsninger er imponerende. Han leverede vores projekt på tid 
+                                og over budget."
+                            </p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emma Wilson</h4>
+                                <p>Project Manager, WebStudio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Lad os Snakke</h2>
+                    <p class="section-subtitle">
+                        Er du interesseret i at arbejde sammen? Lad mig høre fra dig!
+                    </p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Kontakt Information</h3>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p>din.email@example.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Telefon</h4>
+                                    <p>+45 12 34 56 78</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Lokation</h4>
+                                    <p>København, Danmark</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="GitHub profil">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn profil">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter profil">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Dit Navn</label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Din Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Emne</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <div class="error-message" id="subject-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Din Besked</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Besked
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-text">DN</span>
+                        <span class="logo-subtitle">Developer</span>
+                    </div>
+                    <p>Passioneret full-stack developer der skaber digitale løsninger der gør en forskel.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navigation</h4>
+                        <a href="#about">Om Mig</a>
+                        <a href="#experience">Erfaring</a>
+                        <a href="#projects">Projekter</a>
+                        <a href="#contact">Kontakt</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Kompetencer</h4>
+                        <a href="#skills">Frontend</a>
+                        <a href="#skills">Backend</a>
+                        <a href="#skills">Cloud</a>
+                        <a href="#skills">DevOps</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Social</h4>
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Din Navn. Alle rettigheder forbeholdes.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

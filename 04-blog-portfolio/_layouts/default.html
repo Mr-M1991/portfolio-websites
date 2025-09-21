@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- SEO Meta Tags -->
+    {% seo %}
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+    {% endif %}
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+    {% endif %}
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ site.author }}",
+        "jobTitle": "Full-Stack Developer",
+        "description": "{{ site.description }}",
+        "url": "{{ site.url }}",
+        "sameAs": [
+            "https://github.com/{{ site.social.github }}",
+            "https://linkedin.com/in/{{ site.social.linkedin }}",
+            "https://twitter.com/{{ site.social.twitter }}"
+        ],
+        "knowsAbout": ["Web Development", "JavaScript", "React", "Node.js", "Python", "AWS"],
+        "alumniOf": "Din Uddannelse",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Din Nuværende Arbejdsplads"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Hovednavigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ '/' | relative_url }}" class="logo-link" aria-label="Gå til forsiden">
+                    <span class="logo-text">DN</span>
+                    <span class="logo-subtitle">Blog</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                {% for item in site.navigation %}
+                <a href="{{ item.url | relative_url }}" class="nav-link{% if page.url == item.url %} active{% endif %}" role="menuitem">
+                    {{ item.title }}
+                </a>
+                {% endfor %}
+            </div>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Åbn navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-text">DN</span>
+                        <span class="logo-subtitle">Blog</span>
+                    </div>
+                    <p>{{ site.description }}</p>
+                    <div class="social-links">
+                        <a href="https://github.com/{{ site.social.github }}" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/{{ site.social.twitter }}" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:{{ site.social.email }}" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navigation</h4>
+                        <a href="{{ '/about/' | relative_url }}">Om Mig</a>
+                        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+                        <a href="{{ '/projects/' | relative_url }}">Projekter</a>
+                        <a href="{{ '/contact/' | relative_url }}">Kontakt</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Kategorier</h4>
+                        {% for category in site.categories limit:4 %}
+                        <a href="{{ '/categories/' | relative_url }}{{ category[0] | slugify }}/">{{ category[0] }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="link-group">
+                        <h4>Social</h4>
+                        <a href="https://github.com/{{ site.social.github }}">GitHub</a>
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}">LinkedIn</a>
+                        <a href="https://twitter.com/{{ site.social.twitter }}">Twitter</a>
+                        <a href="mailto:{{ site.social.email }}">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. Alle rettigheder forbeholdes.</p>
+                <div class="footer-legal">
+                    <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
+                    <a href="{{ '/terms/' | relative_url }}">Terms of Service</a>
+                    <a href="{{ '/cookies/' | relative_url }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    
+    <!-- Analytics (replace with your tracking code) -->
+    <!-- Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script> -->
+</body>
+</html>
+

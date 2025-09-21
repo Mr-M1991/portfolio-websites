@@ -1,0 +1,195 @@
+---
+layout: default
+---
+
+<article class="project">
+    <header class="project-header">
+        <div class="container">
+            <div class="project-meta">
+                <div class="project-category">{{ page.category }}</div>
+                <div class="project-date">
+                    <i class="fas fa-calendar"></i>
+                    {{ page.date | date: "%B %Y" }}
+                </div>
+                {% if page.status %}
+                <div class="project-status status-{{ page.status | downcase }}">
+                    <i class="fas fa-circle"></i>
+                    {{ page.status }}
+                </div>
+                {% endif %}
+            </div>
+            <h1 class="project-title">{{ page.title }}</h1>
+            {% if page.subtitle %}
+                <p class="project-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            {% if page.image %}
+                <div class="project-image">
+                    <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
+                </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="project-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="project-body">
+                    {{ content }}
+                </div>
+                
+                <aside class="project-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Projekt Detaljer</h3>
+                        <div class="project-details">
+                            {% if page.technologies %}
+                            <div class="detail-item">
+                                <strong>Teknologier:</strong>
+                                <div class="tech-tags">
+                                    {% for tech in page.technologies %}
+                                        <span class="tech-tag">{{ tech }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            {% if page.duration %}
+                            <div class="detail-item">
+                                <strong>Varighed:</strong>
+                                <span>{{ page.duration }}</span>
+                            </div>
+                            {% endif %}
+                            
+                            {% if page.team_size %}
+                            <div class="detail-item">
+                                <strong>Team Størrelse:</strong>
+                                <span>{{ page.team_size }}</span>
+                            </div>
+                            {% endif %}
+                            
+                            {% if page.role %}
+                            <div class="detail-item">
+                                <strong>Min Rolle:</strong>
+                                <span>{{ page.role }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Links</h3>
+                        <div class="project-links">
+                            {% if page.demo_url %}
+                            <a href="{{ page.demo_url }}" class="project-link demo" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            {% endif %}
+                            
+                            {% if page.github_url %}
+                            <a href="{{ page.github_url }}" class="project-link github" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            {% endif %}
+                            
+                            {% if page.case_study_url %}
+                            <a href="{{ page.case_study_url }}" class="project-link case-study" target="_blank" rel="noopener">
+                                <i class="fas fa-file-alt"></i>
+                                Case Study
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Del Projekt</h3>
+                        <div class="social-share">
+                            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}" 
+                               target="_blank" rel="noopener" class="share-link twitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" 
+                               target="_blank" rel="noopener" class="share-link linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer class="project-footer">
+        <div class="container">
+            <div class="project-navigation">
+                {% assign projects = site.projects | sort: 'date' | reverse %}
+                {% for project in projects %}
+                    {% if project.url == page.url %}
+                        {% assign current_index = forloop.index0 %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% if current_index > 0 %}
+                    {% assign prev_project = projects[current_index | minus: 1] %}
+                    <a href="{{ prev_project.url | relative_url }}" class="nav-link prev">
+                        <i class="fas fa-arrow-left"></i>
+                        <div class="nav-content">
+                            <span class="nav-label">Forrige Projekt</span>
+                            <span class="nav-title">{{ prev_project.title }}</span>
+                        </div>
+                    </a>
+                {% endif %}
+                
+                {% if current_index < projects.size | minus: 1 %}
+                    {% assign next_project = projects[current_index | plus: 1] %}
+                    <a href="{{ next_project.url | relative_url }}" class="nav-link next">
+                        <div class="nav-content">
+                            <span class="nav-label">Næste Projekt</span>
+                            <span class="nav-title">{{ next_project.title }}</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- Related Projects -->
+<section class="related-projects">
+    <div class="container">
+        <h2>Relaterede Projekter</h2>
+        <div class="projects-grid">
+            {% assign related_projects = site.projects | where_exp:"project","project.category == page.category" | where_exp:"project","project.url != page.url" | limit:3 %}
+            {% for project in related_projects %}
+            <div class="project-card">
+                <div class="project-image">
+                    {% if project.image %}
+                        <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+                    {% else %}
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    {% endif %}
+                    <div class="project-category">{{ project.category }}</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">
+                        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                    </h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tech">
+                        {% for tech in project.technologies limit:3 %}
+                            <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
