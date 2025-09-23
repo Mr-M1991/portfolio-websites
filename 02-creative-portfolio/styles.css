@@ -9,7 +9,7 @@
     --primary-color: #6366f1;
     --primary-dark: #4f46e5;
     --secondary-color: #ec4899;
-    --accent-color: #f59e0b;
+    --accent-color: #00ff41;
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --text-light: #9ca3af;
@@ -278,6 +278,7 @@ body {
     position: relative;
 }
 
+
 @keyframes slideInUp {
     to {
         opacity: 1;
@@ -291,6 +292,11 @@ body {
     margin-bottom: 2rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.8s forwards;
+}
+
+.hero-subtitle.highlight-text {
+    color: var(--accent-color) !important;
+    font-weight: 600;
 }
 
 .hero-cta {
@@ -416,7 +422,7 @@ body {
     min-width: 20px;
 }
 
-.keyword { color: #f59e0b; }
+.keyword { color: #00ff41; }
 .variable { color: #3b82f6; }
 .property { color: #10b981; }
 .string { color: #ec4899; }
@@ -449,16 +455,18 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    color: var(--text-secondary);
+    color: var(--accent-color);
     font-size: 0.9rem;
     animation: bounce 2s infinite;
+    text-shadow: 0 0 10px var(--accent-color);
 }
 
 .scroll-line {
     width: 2px;
     height: 30px;
-    background: var(--gradient-primary);
+    background: var(--accent-color);
     border-radius: 2px;
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 @keyframes bounce {
@@ -536,7 +544,7 @@ section {
 .text-block h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .text-block p {
@@ -791,7 +799,7 @@ section {
 .skill-category h3 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    color: var(--text-primary);
     text-align: center;
 }
 
@@ -831,7 +839,7 @@ section {
 .contact-info h3 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .contact-items {

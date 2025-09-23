@@ -157,20 +157,26 @@ function initContactForm() {
             });
             
             if (!isValid) {
-                showNotification('Alle felter skal udfyldes', 'error');
+                showNotification('All fields must be filled out', 'error');
                 return;
             }
             
+            // Get form values
+            const name = inputs[0].value;
+            const email = inputs[1].value;
+            const subject = inputs[2].value;
+            const message = inputs[3].value;
+            
             // Open email client with pre-filled content
             const emailSubject = encodeURIComponent(subject);
-            const emailBody = encodeURIComponent(`Hej Mike,\n\n${message}\n\nMed venlig hilsen,\n${name}\n${email}`);
+            const emailBody = encodeURIComponent(`Hi Mike,\n\n${message}\n\nBest regards,\n${name}\n${email}`);
             const mailtoLink = `mailto:Andersenmike91@gmail.com?subject=${emailSubject}&body=${emailBody}`;
             
             // Open email client
             window.location.href = mailtoLink;
             
             // Show success message
-            showNotification('Email client åbnet! Udfyld din besked og send.', 'success');
+            showNotification('Email client opened! Fill out your message and send.', 'success');
             this.reset();
         });
     }
@@ -486,13 +492,13 @@ window.addEventListener('load', function() {
 
 // Console welcome message
 console.log(`
-🎨 Velkommen til min kreative portfolio!
-✨ Bygget med HTML5, CSS3 og Vanilla JavaScript
-🚀 Avancerede animationer og interaktive effekter
-📱 Fuldt responsivt design med moderne UI/UX
-🎯 Fokus på kreativ problemløsning og innovation
+🎨 Welcome to my creative portfolio!
+✨ Built with HTML5, CSS3 and Vanilla JavaScript
+🚀 Advanced animations and interactive effects
+📱 Fully responsive design with modern UI/UX
+🎯 Focus on creative problem solving and innovation
 
-Kontakt mig gerne hvis du vil samarbejde!
+Feel free to contact me if you want to collaborate!
 `);
 
 // Performance monitoring
@@ -517,7 +523,7 @@ document.addEventListener('keydown', function(e) {
     
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         document.body.style.animation = 'rainbow 2s infinite';
-        showNotification('🎉 Konami Code aktiveret! Du fandt easter egget!', 'success');
+        showNotification('🎉 Konami Code activated! You found the easter egg!', 'success');
         konamiCode = [];
     }
 });
